@@ -18,8 +18,11 @@ const connectDb = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }, (err, res) => {
-            if (res)
+            if (res) {
                 console.log('DB Connected')
+            } else {
+                console.log('err', err)
+            }
         });
     } catch (error) {
         console.log('Db not connected', error)
